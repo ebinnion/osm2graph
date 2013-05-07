@@ -79,3 +79,33 @@ If the edge is defined as (u,v), ```<Lon_1>``` is the longitude value of v.
 If the edge is defined as (u,v), ```<Lat_n>``` is the latitude value of v.
 - ```<Lon_n>``` : This value is the longitude of the last point of the edge. 
 If the edge is defined as (u,v), ```<Lon_n>``` is the longitude value of v.
+
+##Some pointers
+Every ```<node>``` tag is not going to be necessary to "record" in your Nodes.txt file.
+
+A ```<node>``` is a point, and can be ANYWHERE. It can be a "Phone Booth", a "Restaurant", or anything. We might use this data later, but we are mostly interested in nodes that are associated with ```<ways>```. A "way" is .... well ... a street. Below is an example of a way.
+
+    <way id="24985737" version="2" timestamp="2008-06-21T07:21:00Z" uid="35667" user="encleadus" changeset="243505">
+    	<nd ref="271610104"/>
+    	<nd ref="271610105"/>
+    	<nd ref="271610106"/>
+    	<nd ref="271610107"/>
+    	<nd ref="271610108"/>
+    	<nd ref="271610109"/>
+    	<nd ref="271610110"/>
+    	<nd ref="271610111"/>
+    	<nd ref="271610112"/>
+    	<nd ref="271610113"/>
+    	<nd ref="271609952"/>
+    	<tag k="created_by" v="Potlatch 0.9c"/>
+    	<tag k="highway" v="primary"/>
+    </way>
+
+That way has an id (along with some other unnecessary attributes) on the first line. But, then it goes on to have a list of "nd" attributes, which is the "geometry" of the "way". The first "nd" and last "nd" are significant bacuase they are the from and to of an edge in the Edges.txt file. Every "nd" in between is associated with the streets (way's) edge_geometry.
+
+###Summary
+
+The ```<way>``` id is really the ```<edge>``` id.
+The first occurrence of ```<nd ref="271610104"/>``` is the ```<from>``` of your edge, and the last occurrence of ```<nd ref="271609952" />``` is the ```<to>``` of your edge.
+Every other ```<nd ref="nnnnnnn" />``` is just part of the EdgeGeometry.txt file.
+The ```<tag k="somekey" v="somevalue">``` are important because they are needed for ```<Name>``` and ```<Type>``` in the EdgeGeometry.txt file.
