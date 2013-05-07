@@ -68,13 +68,14 @@ This text files contains the geometry data of each edge in the road network. The
     - trunk
     - trunk_link
     - unclassified
-- <Length>: This value is the length, in meters, of the edge.
-- <Lat_1>: This value is the latitude of the first point of the edge. 
+
+- ```<Length>```: This value is the length, in meters, of the edge.
+- ```<Lat_1>```: This value is the latitude of the first point of the edge. 
 If the edge is defined as (u,v), <Lat_1> is the latitude value of u.
-- <Lon_1>: This value is the longitude of the first point of the edge. 
+- ```<Lon_1>```: This value is the longitude of the first point of the edge. 
 If the edge is defined as (u,v), <Lon_1> is the longitude value of v.
 ....<Lat_i><Lon_i>....: The latitude and longitude values for several points between the first and the last points of the edge. These points are optional and the number of optional points varies according to the geometry of the represented edge.
-- <Lat_n> : This value is the latitude of the last point of the edge. 
+- ```<Lat_n>``` : This value is the latitude of the last point of the edge. 
 If the edge is defined as (u,v), <Lat_n> is the latitude value of v.
-- <Lon_n> : This value is the longitude of the last point of the edge. 
+- ```<Lon_n>``` : This value is the longitude of the last point of the edge. 
 If the edge is defined as (u,v), <Lon_n> is the longitude value of v.
