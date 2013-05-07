@@ -1,13 +1,13 @@
 #Problem Statement
-This project is the result of a contest from my Spatial Data Mining class at Midwestern State University, taught by Professor Griffin.
+This project is the result of a contest from my Spatial Data Mining class at Midwestern State University, taught by Professor Griffin. Below is the assignment as given by Professor Griffin.
 
-Read in an Open Street Map defined file (OSM / XML / Shapefile) for Texas and create a file structure as defined in "File Definitions". Notice how I used the word defined (not similar to). Your input file can be any of the above mentioned file structures, they can even be in a compressed form, or whatever you think MAY speed up your processing time. Pre-Processing will count as part of the processing time. The contest results will be determined by a class vote based on the following criteria:
+    Read in an Open Street Map defined file (OSM / XML / Shapefile) for Texas and create a file structure as defined in "File Definitions". Notice how I used the word defined (not similar to). Your input file can be any of the above mentioned file structures, they can even be in a compressed form, or whatever you think MAY speed up your processing time. Pre-Processing will count as part of the processing time. The contest results will be determined by a class vote based on the following criteria:
 
-- Build time, 
-- Awesomeness of Pythonic-ness, 
-- Correctness (although there will be some leeway for easily correctable misunderstandings due to the rush or ambiguity on my part).
+    - Build time, 
+    - Awesomeness of Pythonic-ness, 
+    - Correctness (although there will be some leeway for easily correctable misunderstandings due to the rush or ambiguity on my part).
 
-Only one real restriction: your code must be a genuine creation of your group. OF COURSE you can use libraries, but not as the main power behind your solution. I want to see clever, thoughtful, logical solutions. I would like to see pure string parsing (no xml elementree libraries, etc.), but whatever:)
+    OF COURSE you can use libraries, but not as the main power behind your solution. I want to see clever, thoughtful, logical solutions. I would like to see pure string parsing (no xml elementree libraries, etc.).
 
 #Osm 2 Graph
 This is the project that I turned in after for the contest. It is not perfect, and needs work. Currently, it takes approximately 300 seconds to parse a ~3.45 Gb file and print data to the 3 separate files.
@@ -16,6 +16,14 @@ This script is known to break with large file sizes (size > 4 Gb) and the proces
 
 - **Threading** - Due to the way OSM files are organized, it would make sense to thread the reading in and processing of the node tags, but not the way tags. Also, I would like to test how fast the script would run if I put all output into a buffer, and used a separate thread to print each file.
 - **Database Support** - Due to the large file sizes of OSM files (~28 Gb for the bzipped planet file), this script should likely make use of some type of database so as not to run out of memory. I did test this script with an SQLite database, but run time was approximately 20x longer in my tests, so the idea was scrapped.
+
+#How to Use Osm2Graph
+- Ensure you have Python installed
+- Download Osm2Graph and copy main.py into the directory of your OSM file.
+- On the command line, navigate to the directory of main.py
+- Run this command ```python main.py [name-of-your-osm-file-here].osm```
+
+**Note:** Depending on your configuration, you may need to use ```python ./main.py ./[name-of-your-osm-file-here].osm```
 
 #File Definitions
 
